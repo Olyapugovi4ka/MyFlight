@@ -1,4 +1,6 @@
 #import "SceneDelegate.h"
+#import "MainViewController.h"
+
 
 @interface SceneDelegate ()
 
@@ -8,9 +10,21 @@
 
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
-    // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-    // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-    // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+ // создаем окно
+    UIWindow *window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene*)scene];
+    // создаем контроллер
+    MainViewController *controller = [[MainViewController alloc] init];
+    // навигейшн контроллер
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:controller];
+    // присваиваем цвет контроллеру
+    controller.view.backgroundColor = [UIColor redColor];
+    //устанавливаем главный контроллер
+    window.rootViewController = nc;
+    // присваиваем созданное окно свойству класса
+    self.window = window;
+    [self.window makeKeyAndVisible];
+    
+  
 }
 
 
