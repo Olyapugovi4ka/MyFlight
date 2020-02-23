@@ -35,7 +35,7 @@
         NSArray *citiesJsonArray = [self arrayFromFileName:@"cities" ofType:@"json"];
         _citiesArray = [self createObjectsFromArray:citiesJsonArray withType:DataSourceTypeCity];
         
-        NSArray*airportsJsonArray = [self arrayFromFileName:@"airpots" ofType:@"json"];
+        NSArray*airportsJsonArray = [self arrayFromFileName:@"airports" ofType:@"json"];
         _airportsArray = [self createObjectsFromArray:airportsJsonArray withType:DataSourceTypeArport];
         
         dispatch_async(dispatch_get_main_queue(), ^{
